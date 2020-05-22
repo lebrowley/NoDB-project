@@ -38,5 +38,5 @@
     - ToRead.js: stateful; receives book info (books, booksToRead) as props; makes axios requests for PUT and POST; renders the book information to display in the To Read list
 
 ### Wireframe
-<img src= './images/basic-layout-updated.png'>
-<img src= './images/component-tree-updated.png'>
+<img src= './images/wireframe-passedoff.png'>
+<img src= './images/component-tree-passedoff.png'>
