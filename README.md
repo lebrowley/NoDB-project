@@ -7,7 +7,7 @@
 - Full CRUD
     - GET: get all books
     - POST: add books to Read or To Read lists
-    - PUT: change the status of a book to own or want
+    - PUT: change the cover image of a book
     - DELETE: remove a book 
 
 ### Functionality
@@ -19,14 +19,15 @@
             - Read (for adding the book to the Read list)
             - To Read (for adding the book to the To Read list)
     - Finally, below the book info and buttons will be two boxes- one labeled Read and one labeled To Read. This is where the sorted lists of books will display. 
-        - Within each box, there will be two input options. One at the very bottom will allow users to add their own books to each list. 
-        - The other input will be beside each book on the list and it will allow the user to update the status of each book to own or want. 
+        - Within each box, there will be two options. 
+            - One input at the very bottom will allow users to add their own books to each list. 
+            - The other input will be beside each book on the list and it will allow the user to update the cover image of any book they like. 
 
 ### Endpoints
 - GET: fetch one random book from our book data array 
 - DELETE: remove the currently displayed book; allow next book to appear
-- PUT: change book status to own or want
-- POST: add a new book to our array
+- PUT: change book cover image
+- POST: add a new book to the array of each component
 
 ### Component Architecture
 - App.js: stateful; holds our book information as well as the sorting information the user selects.
@@ -37,5 +38,5 @@
     - ToRead.js: stateful; receives book info (books, booksToRead) as props; makes axios requests for PUT and POST; renders the book information to display in the To Read list
 
 ### Wireframe
-<img src= './images/basic-layout.png'>
-<img src= './images/component-tree.png'>
+<img src= './images/basic-layout-udated.png'>
+<img src= './images/component-tree-updated.png'>
