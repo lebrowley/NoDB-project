@@ -2,41 +2,48 @@
 
 ## Application Concept and Wireframe
 ### Application Concept
-- This is a book sorting app
+- This is a book review
 - I will utilize book data that I created
 - Full CRUD
     - GET: get all books
-    - POST: add books to Read or To Read lists
-    - PUT: change the cover image of a book
-    - DELETE: remove a book 
+    - POST: make a comment about a book
+    - PUT: change a comment about a book
+    - DELETE: remove a comment about a book
 
 ### Functionality
 - There will be a header at the top of the page that displays the name of the app
-- When the app loads, an image of a book will display below the header
-    - Below the book information, there will be three buttons: 
-        - Remove (for deleting the book)
-        - Add 
-            - Read (for adding the book to the Read list)
-            - To Read (for adding the book to the To Read list)
-    - Finally, below the book info and buttons will be two boxes- one labeled Read and one labeled To Read. This is where the sorted lists of books will display. 
-        - Within each box, there will be two options. 
-            - One input at the very bottom will allow users to add their own books to each list. 
-            - The other input will be beside each book on the list and it will allow the user to update the cover image of any book they like. 
+- When the app loads, an image of a book will display below the header.
+- Below the the book information will be a button called new that allows you to get a new book to display
+- Next there is a section for adding comments
+    - Each comment is displayed in the order they are made
+        - Each comment has an edit or delete option below it
+            - The Edit button opens up the comment to be updated
+            - The Delete button removes the comment
 
 ### Endpoints
 - GET: fetch one random book from our book data array 
-- DELETE: remove the currently displayed book; allow next book to appear
-- PUT: change book cover image
-- POST: add a new book to the array of each component
+- DELETE: remove a comment
+- PUT: change a comment
+- POST: add a new comment
 
 ### Component Architecture
-- App.js: stateful; holds our book information as well as the sorting information the user selects.
-    - this.state.books; this.state.booksRead; this.state.booksToRead
-- Children: 
-    - Header.js: functional
-    - Read.js: stateful; receives book info (books, booksRead) as props; makes axios request for PUT and POST; renders the book information to display in the Read list
-    - ToRead.js: stateful; receives book info (books, booksToRead) as props; makes axios requests for PUT and POST; renders the book information to display in the To Read list
+- App.js: stateful
+    - Holds and displays the book information; GET request
+    - Renders the Header component and the Comment component
+- Header.js: functional; child of App.js
+- Comment.js: stateful; child of App.js 
+    - Holds the comment information and methods for updating (PUT), creating (POST), and deleting (POST)
+    - Renders the Post component and the Compose component
+- Post.js: stateful; child of Comment.js
+    - Holds the toggle information for the editing view
+    - Renders the Edit component and the Edit and Delete buttons
+- Compose.js; child of Comment.js
+    - Holds the text input information
+    - Renders the input and button for creating a comment
+- Edit.js: stateful; child of Post.js
+    - Holds
 
-### Wireframe
-<img src= './images/wireframe-passedoff.png'>
-<img src= './images/component-tree-passedoff.png'>
+### Wireframe and Component Tree
+<img src= './images/wireframe.png'>
+<img src= './images/component-tree-skeleton.png'>
+<img src= './images/component-tree-details.png'>

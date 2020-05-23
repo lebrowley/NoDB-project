@@ -25,10 +25,10 @@ class Edit extends Component {
     render(){
         return(
             <div className="edit-comment">
-                <input 
+                <textarea 
                     className="edit-box" 
                     value= {this.state.text} 
-                    onChange={ (e) => this.updateText}></input>
+                    onChange={ (e) => this.updateText}></textarea>
 
                 <div className="edit-controls">
                     <button 

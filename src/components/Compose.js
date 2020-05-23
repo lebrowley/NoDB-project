@@ -26,12 +26,13 @@ class Compose extends Component {
     render() {
         return (
             <div className="compose-body">
-                <input 
-                    className="comment-input"
-                    placeholder="comment here"
+                <textarea
+                    className="comment-textarea"
+                    placeholder="write your comment here"
                     value= {this.state.text}
                     onChange= { (e) => this.updateText(e.target.value) }
-                />
+                    ></textarea> 
+                   
 
                 <button className="comment-button" onClick={this.createPost}>Comment</button>
             </div>

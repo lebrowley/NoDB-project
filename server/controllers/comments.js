@@ -1,4 +1,4 @@
-const comment = [{id: 0, text: 'This book is great'}, {id: 1, text: 'one of the best books of all time!'}]
+const comment = [{id: 0, text: 'This book is great'}, {id: 1, text: 'One of the best books of all time!'}]
 
 let id = 2
 

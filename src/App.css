@@ -5,29 +5,34 @@
   background-color: #766A58;
 }
 
+/*--------------------------------------Book Display------------*/
+
 .book-display{
   background-color: white;
   
 }
-
-
 
 #image-thumbnail {
   height: 300px;
   width: 200px;
 }
 
-.read-toread-components {
-  display: flex; 
-  justify-content: center;
- 
-}
-
-.list {
-  background-color: white;
-}
+/*-------------------------------------Comment Display--------------*/
 
 .post-text {
   background-color: white;
+}
 
+.display-comment {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  margin: 15px;
+}
+
+.comment-textarea {
+  height: 100px;
+  width: 500px;
 }
