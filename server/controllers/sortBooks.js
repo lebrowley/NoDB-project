@@ -1,3 +1,4 @@
+const book = [{id: 0, title: 'Title', author: 'Author', image: 'image'}]
 let id = 0
 
 module.exports = {
@@ -5,9 +6,7 @@ module.exports = {
 
     },
 
-    createBook: (req, res) => {
-        
-    },
+    
 
     updateBookImage: (req, res) => {
         
