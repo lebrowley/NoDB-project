@@ -2,8 +2,19 @@ const data = require('../books.json'); ///now you can manipulate this in your me
 
 const book = []
 let id = 0
+// let currentBook = 0
 
 module.exports = {
+    // getNewBook: (req, res) => {
+    //     const newBookMap = data.map((element, index) => {
+    //         if(currentBook === index) {
+    //             book.push(element)
+    //         }
+    //     })
+    //     res.status(200).send(book)
+    // }
+
+
     getNewBook: (req, res) => {
         const newBook = []
         const newBookMap = data.map( (book, index) => {
@@ -27,9 +38,9 @@ module.exports = {
     //     res.status(200).send(book)
     // }
 
-    createPost: (req, res) => {
-        const newPost = req.body.text
+    // createPost: (req, res) => {
+    //     const newPost = req.body.text
 
-        res.status(200).send(newPost)
-    }
+    //     res.status(200).send(newPost)
+    // }
 }
