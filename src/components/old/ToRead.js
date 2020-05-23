@@ -26,6 +26,9 @@ class ToRead extends Component {
                 unordered list displaying title author and image in the same way as App.js
                 display BOTH props from App.js AND this.state.readUser from user input.....
                 */}
+                     <p>title</p>
+                    <p>author</p>
+                    <img alt="image"/>
                 </div>
 
                 <div className="changeImage-box">

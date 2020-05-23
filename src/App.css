@@ -5,4 +5,24 @@
   background-color: #766A58;
 }
 
+.book-display{
+  background-color: white;
+  
+}
 
+
+
+#image-thumbnail {
+  height: 300px;
+  width: 200px;
+}
+
+.read-toread-components {
+  display: flex; 
+  justify-content: center;
+ 
+}
+
+.list {
+  background-color: white;
+}
