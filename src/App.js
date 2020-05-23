@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from './components/Header';
+import Comment from './components/Comment';
 
 class App extends Component {
   constructor(){
@@ -57,10 +58,8 @@ class App extends Component {
             
          </div>
       </div>
-{/* 
-        <Post />
-        <Edit />
-        <Compose /> */}
+
+      <Comment />
       
 
     </div>
