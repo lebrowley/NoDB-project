@@ -10,16 +10,13 @@ class App extends Component {
 
     this.state= {
       books: [],
-  
-      posts: []
   }
 
   this.componentDidMount = this.componentDidMount.bind(this)
-  this.createPost = this.createPost(this)
 }
 
   componentDidMount(){
-  axios.get('/api/new-book')
+  axios.get('/api/books')
         .then((res) => {
           this.setState({books: res.data[0]})  //can i make it so i don't have to specify index?? 
         })
@@ -29,10 +26,6 @@ class App extends Component {
       
   }
 
- createPost(text){
-    axios.post('/api/books', {text}).then (res => this.setState({posts: res.data}))
-  }
-
   render(){
     console.log(this.state.books)
     return (
@@ -40,6 +33,7 @@ class App extends Component {
 
        <Header/>
 
+      {/*if there's time, could make this it's own component, passing info through props; BookDisplay component (functional) */}
       <div className="book-display"> 
     
         <div className="title-author">

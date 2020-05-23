@@ -29,6 +29,7 @@ class Compose extends Component {
                     className="comment-input"
                     placeholder="Comment"
                     // value= {text}
+                    // value= {text}
                     onChange= { (e) => this.updateText(e.target.value) }
                 />
 

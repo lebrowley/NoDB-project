@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
 import Compose from './Compose';
-// import Post from './Post';
+import Post from './Post';
 
 class Comment extends Component {
     constructor(){
@@ -12,37 +12,37 @@ class Comment extends Component {
         }
 
         this.updatePost = this.updatePost.bind(this)
-        this.deletePost = this.deletePost.bind(this)
-        this.createPost = this.createPost.bind(this)
+        // this.deletePost = this.deletePost.bind(this)
+        // this.createPost = this.createPost.bind(this)
     }
 
-    updatePost(id, text){
-        axios.put(`/api/books?id=${id}`, {text}
-        .then(res => {
-            this.setState({posts: res.data})
-        }))
-        .catch(res => {
-            console.log("error")
-        })
-    }
-
-    deletePost(id){
-        axios.delete(`/api/books?id=${id}`)
+    componentDidMount(){
+        axios.get('/api/comments')
         .then(res => {
             this.setState({posts: res.data})
         })
-        .catch(res => {
-            console.log('error')
+        .catch(res =>{
+            console.log('error getting comment data')
         })
     }
 
-    createPost(text){
-        axios.post('/api/books', {text})
-        .then (res =>{
+    updatePost(id, text) {
+        axios.put(`/api/comments?id=${id}`, {text})
+        .then(res => {
             this.setState({posts: res.data})
         })
         .catch(res => {
-            console.log('error')
+            alert('error updating post')
+        })
+    }
+
+    deletePost(id) {
+        axios.delete(`/api/comments?id=${id}`)
+        .then (res => {
+            this.setState({posts: res.data})
+        })
+        .catch(res => {
+            alert('error deleting post')
         })
     }
 
@@ -52,16 +52,18 @@ class Comment extends Component {
                 <h3>Add a Comment</h3>
 
                 <div className="post-body">
-                    <Compose createPostFn = {this.createPost} />
-
-                    {/* {posts.map(post => (
+                     {this.state.posts.map(post => (
                         <Post 
                             key= {post.id}
                             text= {post.text}
-                            id= {post.id}
+                            id={post.id}
                             updatePostFn= {this.updatePost}
-                            deletePostFn= {this.deletePost}
-                    />))} */}
+                            // deletePostFn= {this.deletePost}
+                    />))}
+
+                    <Compose 
+                            createPostFn = {this.createPost} />
+
                 </div>
 
             </div>
