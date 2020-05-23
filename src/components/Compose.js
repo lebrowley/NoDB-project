@@ -7,6 +7,8 @@ class Compose extends Component {
         this.state = {
             text: ''
         }
+        
+        this.createPost = this.createPost.bind(this)
     }
 
     updateText(text) {
@@ -22,14 +24,12 @@ class Compose extends Component {
     }
 
     render() {
-
         return (
             <div className="compose-body">
                 <input 
                     className="comment-input"
-                    placeholder="Comment"
-                    // value= {text}
-                    // value= {text}
+                    placeholder="comment here"
+                    value= {this.state.text}
                     onChange= { (e) => this.updateText(e.target.value) }
                 />
 

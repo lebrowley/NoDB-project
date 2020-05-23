@@ -18,5 +18,5 @@ app.put('/api/comments/:id', commentCtrl.editComment)
 
 app.delete('/api/comments/:id', commentCtrl.deleteComment)
 
-
+//Get dummy comments for display
 app.get('/api/comments', commentCtrl.getComment)

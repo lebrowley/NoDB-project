@@ -23,17 +23,23 @@ class Edit extends Component {
     }
 
     render(){
-        const {hideEdit} = this.props
-        const {text} = this.state
-
         return(
             <div className="edit-comment">
-                <textarea className="edit-textarea" value= {text} onChange={ (e) => this.updateText}></textarea>
+                <input 
+                    className="edit-box" 
+                    value= {this.state.text} 
+                    onChange={ (e) => this.updateText}></input>
 
                 <div className="edit-controls">
-                    <button id="update-button" onClick= {this.updatePost}>Update</button>
+                    <button 
+                        id="update-button" 
+                        onClick= {this.updatePost}>
+                            Update</button>
 
-                    <button id="cancel-button" onClick= {hideEdit}>Cancel</button>
+                    <button 
+                        id="cancel-button" 
+                        onClick= {this.props.hideEdit}>
+                            Cancel</button>
                 </div>
             </div>
         )

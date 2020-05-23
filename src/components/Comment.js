@@ -12,8 +12,8 @@ class Comment extends Component {
         }
 
         this.updatePost = this.updatePost.bind(this)
-        // this.deletePost = this.deletePost.bind(this)
-        // this.createPost = this.createPost.bind(this)
+        this.deletePost = this.deletePost.bind(this)
+        this.createPost = this.createPost.bind(this)
     }
 
     componentDidMount(){
@@ -46,6 +46,16 @@ class Comment extends Component {
         })
     }
 
+    createPost(text) {
+        axios.post('/api/comments', {text})
+        .then(res => {
+            this.setState({posts: res.data})
+        })
+        .catch(res => {
+            alert('error creating comment')
+        })
+    }
+
     render(){
         return (
             <div>
@@ -58,7 +68,7 @@ class Comment extends Component {
                             text= {post.text}
                             id={post.id}
                             updatePostFn= {this.updatePost}
-                            // deletePostFn= {this.deletePost}
+                            deletePostFn= {this.deletePost}
                     />))}
 
                     <Compose 

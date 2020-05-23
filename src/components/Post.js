@@ -15,19 +15,11 @@ class Post extends Component {
     }
 
     showEdit(){
-
+        this.setState({editing: true})
     }
 
     hideEdit(){
         this.setState({editing: false})
-    }
-
-    toggleMasterMenu(){
-
-    }
-
-    hideMasterMenu(){
-
     }
 
     render(){
@@ -43,6 +35,11 @@ class Post extends Component {
                         :
                         <span className="post-text">{text}</span>
                     }
+                </div>
+                
+                <div className="edit-option-buttons">
+                    <button className="edit-view-toggle" onClick= {this.showEdit}>Edit</button>
+                    <button className="delete-button" onClick= {() => deletePostFn(id)}>Delete</button>
                 </div>
 
             </div>
