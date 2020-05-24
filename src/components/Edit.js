@@ -27,8 +27,9 @@ class Edit extends Component {
             <div className="edit-comment">
                 <textarea 
                     className="edit-box" 
-                    value= {this.state.text} 
-                    onChange={ (e) => this.updateText}></textarea>
+                    type="text"
+                    defaultValue= {this.state.text} 
+                    onChange={ (e) => this.updateText(e.target.value)}></textarea>
 
                 <div className="edit-controls">
                     <button 

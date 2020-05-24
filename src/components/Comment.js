@@ -27,7 +27,7 @@ class Comment extends Component {
     }
 
     updatePost(id, text) {
-        axios.put(`/api/comments?id=${id}`, {text})
+        axios.put(`/api/comments/${id}`, {text})
         .then(res => {
             this.setState({posts: res.data})
         })
@@ -37,7 +37,7 @@ class Comment extends Component {
     }
 
     deletePost(id) {
-        axios.delete(`/api/comments?id=${id}`)
+        axios.delete(`/api/comments/${id}`)
         .then (res => {
             this.setState({posts: res.data})
         })
@@ -69,7 +69,8 @@ class Comment extends Component {
                             id={post.id}
                             updatePostFn= {this.updatePost}
                             deletePostFn= {this.deletePost}
-                    />))}
+                    />))} 
+                    {/*the above map method and subsequent assignment to props is where the values of id and text from the res.data become accessible to other parts of the app */}
 
                     <Compose 
                             createPostFn = {this.createPost} />

@@ -20,7 +20,6 @@ module.exports = {
     //PUT
     editComment: (req, res) => {
         const {id} = req.params
-        const {text} = req.body
 
         const index = comment.findIndex((element) => element.id === +id)
 
@@ -28,7 +27,7 @@ module.exports = {
             return res.status(404).send('Comment not found')
         }
 
-        comment[index].text = text
+        comment[index].text = req.body.text
 
         res.status(200).send(comment)
     },

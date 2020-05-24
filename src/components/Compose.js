@@ -12,8 +12,8 @@ class Compose extends Component {
     }
 
     updateText(text) {
-        this.setState({text})
-    }
+        this.setState({text: text})
+    }  //is the text being passed in the same as the e.target.value from the onChange??
 
     createPost() {
         const {text} = this.state    
@@ -21,7 +21,8 @@ class Compose extends Component {
 
         createPostFn(text)
         this.setState({text: ''})
-    }
+    } //in this function, the input from the user is being pulled off of state (having been set by the onChange/updateText from the input); it is passing the state value to the createPostFn which goes back up the line to the parent that is holding this function (Comment.js) by means of the event (that's the only way info can go from child to parent)
+    //the value of this.state.text is then reset to an empty string, ready for the next input
 
     render() {
         return (

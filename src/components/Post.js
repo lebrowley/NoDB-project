@@ -23,23 +23,23 @@ class Post extends Component {
     }
 
     render(){
-        const {text, id, updatePostFn, deletePostFn} = this.props
+        const {updatePostFn, deletePostFn} = this.props
         return (
             <div className="display-comment">
                 <div className="content">
                     {this.state.editing ? 
-                        <Edit text= {text}
-                              id= {id}
+                        <Edit text= {this.props.text}
+                              id= {this.props.id}
                               hideEdit= {this.hideEdit}
                               updatePostFn= {updatePostFn}  />
                         :
-                        <span className="post-text">{text}</span>
+                        <span className="post-text">{this.props.text}</span>
                     }
                 </div>
                 
                 <div className="edit-option-buttons">
                     <button className="edit-view-toggle" onClick= {this.showEdit}>Edit</button>
-                    <button className="delete-button" onClick= {() => deletePostFn(id)}>Delete</button>
+                    <button className="delete-button" onClick= {() => deletePostFn(this.props.id)}>Delete</button>
                 </div>
 
             </div>
