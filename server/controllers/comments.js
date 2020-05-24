@@ -1,6 +1,8 @@
-const comment = [{id: 0, text: 'This book is great'}, {id: 1, text: 'One of the best books of all time!'}]
+// const comment = [{id: 0, text: 'This book is great'}, {id: 1, text: 'One of the best books of all time!'}]
 
-let id = 2
+let comment = []
+
+let id = 0
 
 module.exports = {
     //GET
@@ -43,6 +45,13 @@ module.exports = {
         }
 
         comment.splice(index, 1)
+
+        res.status(200).send(comment)
+    },
+
+    //DELETE
+    refreshComments: (req, res) => {
+        comment.splice(0, comment.length)
 
         res.status(200).send(comment)
     }

@@ -33,7 +33,7 @@ class Post extends Component {
                               hideEdit= {this.hideEdit}
                               updatePostFn= {updatePostFn}  />
                         :
-                        <span className="post-text">{this.props.text}</span>
+                        <span className="comment-text">{this.props.text}</span>
                     }
                 </div>
                 

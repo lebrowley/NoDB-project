@@ -21,6 +21,7 @@ class Edit extends Component {
         updatePostFn(id, text)
         hideEdit()
     }
+    //this function is passing the value of the event all the way back up to the parent-parent (Comment.js) through an event. This is how we are able to send them off as params and body to the server for our requests
 
     render(){
         return(

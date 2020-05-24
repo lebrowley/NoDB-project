@@ -18,5 +18,8 @@ app.put('/api/comments/:id', commentCtrl.editComment)
 
 app.delete('/api/comments/:id', commentCtrl.deleteComment)
 
+//Refresh comments for a new book
+app.delete('/api/comments', commentCtrl.refreshComments)
+
 //Get dummy comments for display
-app.get('/api/comments', commentCtrl.getComment)
+// app.get('/api/comments', commentCtrl.getComment)

@@ -14,6 +14,7 @@ class Comment extends Component {
         this.updatePost = this.updatePost.bind(this)
         this.deletePost = this.deletePost.bind(this)
         this.createPost = this.createPost.bind(this)
+        this.refreshComments = this.refreshComments.bind(this)
     }
 
     componentDidMount(){
@@ -56,10 +57,22 @@ class Comment extends Component {
         })
     }
 
+    refreshComments(){
+        axios.delete('/api/comments')
+        .then(res => {
+            this.setState({posts: res.data})
+        })
+        .catch(res => {
+            alert('error refreshing comments')
+        })
+    }
+
     render(){
         return (
             <div>
                 <h3>Add a Comment</h3>
+
+                <button onClick={this.refreshComments}>Refresh</button>
 
                 <div className="post-body">
                      {this.state.posts.map(post => (

@@ -17,3 +17,5 @@ module.exports = {
         res.status(200).send(newBook)
     }
 }
+
+//what functionality could I add so it won't crash at the end of the book data array?

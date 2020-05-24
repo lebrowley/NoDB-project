@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount(){
   axios.get('/api/books')
         .then((res) => {
-          this.setState({books: res.data[0]})  //can i make it so i don't have to specify index?? 
+          this.setState({books: res.data[0]})  
         })
         .catch(res => {
           console.log('error')
@@ -31,8 +31,7 @@ class App extends Component {
     <div className="App">
 
        <Header/>
-
-      {/*if there's time, could make this it's own component, passing info through props; BookDisplay component (functional) */}
+       
       <div className="book-display"> 
     
         <div className="title-author">

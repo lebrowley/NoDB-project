@@ -13,7 +13,7 @@ class Compose extends Component {
 
     updateText(text) {
         this.setState({text: text})
-    }  //is the text being passed in the same as the e.target.value from the onChange??
+    } 
 
     createPost() {
         const {text} = this.state    
