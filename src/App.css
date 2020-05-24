@@ -21,11 +21,13 @@
 
 .post-text {
   background-color: white;
+  
 }
 
 .display-comment {
   display: flex;
   justify-content: center;
+  
 }
 
 .content {
