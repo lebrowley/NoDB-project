@@ -1,8 +1,6 @@
 const data = require('../books.json');
 
-const book = []
 let id = 0
-let currentBook = 0
 
 module.exports = {
     getNewBook: (req, res) => {
